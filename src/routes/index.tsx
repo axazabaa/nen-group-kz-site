@@ -4,6 +4,7 @@ import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-reac
 import heroImg from "@/assets/nen-construction.png.asset.json";
 import factoryImg from "@/assets/nen-factory.png.asset.json";
 import jbiProductImg from "@/assets/nen-jbi-product.png.asset.json";
+import productionImg from "@/assets/nen-production.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -404,7 +405,7 @@ function Page() {
               </div>
             </div>
             <div className="fade-up">
-              <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=75" alt="Производство" className="w-full h-full min-h-[400px] object-cover rounded-md" />
+              <img src={productionImg.url} alt="Производство" className="w-full h-full min-h-[400px] object-cover rounded-md" />
             </div>
           </div>
         </div>
