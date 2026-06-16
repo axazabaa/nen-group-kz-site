@@ -6,6 +6,7 @@ import factoryImg from "@/assets/nen-factory.png.asset.json";
 import jbiProductImg from "@/assets/nen-jbi-product.png.asset.json";
 import productionImg from "@/assets/nen-production.png.asset.json";
 import pipelineImg from "@/assets/nen-project-pipeline.png.asset.json";
+import yardImg from "@/assets/nen-project-yard.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -443,7 +444,7 @@ function Page() {
           <SectionHead num="06" title="Реализованные проекты" subtitle="Наши изделия применены на объектах жилого, промышленного и инфраструктурного строительства" />
           <div className="grid md:grid-cols-2 gap-5">
             {[
-              { cat: "ЖИЛОЕ СТРОИТЕЛЬСТВО", t: "Жилой комплекс, Каратауский район", d: "ФБС, плиты перекрытий · 2023", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=75" },
+              { cat: "ЖИЛОЕ СТРОИТЕЛЬСТВО", t: "Жилой комплекс, Каратауский район", d: "ФБС, плиты перекрытий · 2023", img: yardImg.url },
               { cat: "ИНФРАСТРУКТУРА", t: "Дорожное строительство, ЮКО", d: "Дорожные плиты ПД · 2022", img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=900&q=75" },
               { cat: "ПРОМЫШЛЕННОЕ", t: "Производственный объект, Шымкент", d: "Сваи С-90, фундаментные блоки · 2023", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=75" },
               { cat: "ИНФРАСТРУКТУРА", t: "Водоотводная система, Туркестанская обл.", d: "Кольца КС, лотки ЛВ · 2022", img: pipelineImg.url },
