@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-react";
 import heroImg from "@/assets/nen-construction.png.asset.json";
 import factoryImg from "@/assets/nen-factory.png.asset.json";
+import jbiProductImg from "@/assets/nen-jbi-product.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,10 +107,7 @@ const products = [
 const categories = ["Все", "Фундаменты", "Перекрытия", "Трубы и лотки", "Сваи", "Прочее"];
 
 const productImgs = [
-  "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1590074072786-a66914d668f1?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1503594384566-461fe158e797?auto=format&fit=crop&w=800&q=70",
+  jbiProductImg.url,
 ];
 
 const faqs = [
