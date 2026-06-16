@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-react";
 import heroImg from "@/assets/nen-construction.png.asset.json";
+import factoryImg from "@/assets/nen-factory.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -302,7 +303,7 @@ function Page() {
               </div>
             </div>
             <div className="fade-up">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=75" alt="Завод" className="w-full h-[300px] md:h-[360px] object-cover rounded-md" />
+              <img src={factoryImg.url} alt="Завод" className="w-full h-[300px] md:h-[360px] object-cover rounded-md" />
               <div className="bg-cream border border-linecolor rounded-md p-5 mt-4">
                 <div className="font-heading font-semibold text-[14px] mb-2">Наш адрес</div>
                 <div className="text-[14px] text-warmgray leading-relaxed">
