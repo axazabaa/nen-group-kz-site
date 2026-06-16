@@ -8,6 +8,7 @@ import productionImg from "@/assets/nen-production.png.asset.json";
 import pipelineImg from "@/assets/nen-project-pipeline.png.asset.json";
 import yardImg from "@/assets/nen-project-yard.png.asset.json";
 import roadImg from "@/assets/nen-project-road.png.asset.json";
+import craneImg from "@/assets/nen-project-crane.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
