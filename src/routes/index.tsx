@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-react";
+import heroImg from "@/assets/nen-construction.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -263,7 +264,7 @@ function Page() {
               </div>
             </div>
             <div className="fade-up">
-              <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=75" alt="Производство ЖБИ" className="w-full h-[420px] md:h-[520px] object-cover rounded-md" />
+              <img src={heroImg.url} alt="Производство ЖБИ" className="w-full h-[420px] md:h-[520px] object-cover rounded-md" />
               <div className="flex justify-end gap-8 md:gap-12 mt-6">
                 {[{n:15,s:"",l:"лет опыта"},{n:500,s:"+",l:"объектов"},{n:20,s:"+",l:"видов продукции"}].map((s,i)=>(
                   <div key={i} className="text-right">
