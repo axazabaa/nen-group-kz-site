@@ -781,13 +781,15 @@ function FAQBlock() {
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={i} className={`fade-up border border-linecolor rounded-md bg-white overflow-hidden ${isOpen ? "border-l-2 border-l-sage" : ""}`}>
-                <button onClick={() => setOpen(isOpen ? null : i)} className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-                  <span className="font-heading font-semibold text-[15px] text-darktext">{f.q}</span>
-                  <span className="text-sage flex-shrink-0">{isOpen ? <Minus size={18} /> : <Plus size={18} />}</span>
-                </button>
-                <div className={`accordion-content ${isOpen ? "open" : ""} px-6`}>
-                  <p className="text-[14px] text-warmgray leading-[1.7] pb-5">{f.a}</p>
+              <div key={i} className="fade-up">
+                <div className={`border border-linecolor rounded-md bg-white overflow-hidden ${isOpen ? "border-l-2 border-l-sage" : ""}`}>
+                  <button onClick={() => setOpen(isOpen ? null : i)} className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                    <span className="font-heading font-semibold text-[15px] text-darktext">{f.q}</span>
+                    <span className="text-sage flex-shrink-0">{isOpen ? <Minus size={18} /> : <Plus size={18} />}</span>
+                  </button>
+                  <div className={`accordion-content ${isOpen ? "open" : ""} px-6`}>
+                    <p className="text-[14px] text-warmgray leading-[1.7] pb-5">{f.a}</p>
+                  </div>
                 </div>
               </div>
             );
