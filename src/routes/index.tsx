@@ -256,11 +256,11 @@ function Page() {
           <div className="grid lg:grid-cols-[52%_48%] gap-10 lg:gap-14 items-center w-full">
             <div className="fade-up">
               <div className="section-label">ПРОИЗВОДСТВЕННО-ТОРГОВАЯ КОМПАНИЯ</div>
-              <h1 className="font-serif text-[42px] md:text-[60px] lg:text-[72px] leading-[1.05] text-darktext mt-4">
-                Железобетонные<br/>изделия высокой<br/>надёжности
+              <h1 className="font-serif text-[34px] sm:text-[42px] md:text-[60px] lg:text-[72px] leading-[1.05] text-darktext mt-4 break-words hyphens-auto">
+                Железобетонные изделия высокой надёжности
               </h1>
               <hr className="sage-rule" style={{ margin: "28px 0" }} />
-              <p className="text-warmgray text-[17px] md:text-[18px] leading-[1.7] max-w-[480px]">
+              <p className="text-warmgray text-[16px] md:text-[18px] leading-[1.7] max-w-[480px]">
                 NEN GROUP KZ — производство и поставка железобетонных конструкций в Шымкенте и Туркестанской области. Проверено временем и строительной практикой.
               </p>
               <div className="flex flex-wrap gap-3 mt-9">
@@ -269,15 +269,16 @@ function Page() {
               </div>
             </div>
             <div className="fade-up">
-              <img src={heroImg.url} alt="Производство ЖБИ" className="w-full h-[420px] md:h-[520px] object-cover rounded-md" />
-              <div className="flex justify-end gap-8 md:gap-12 mt-6">
+              <img src={heroImg.url} alt="Производство ЖБИ" className="w-full h-[280px] sm:h-[380px] md:h-[520px] object-cover rounded-md" />
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 mt-6 sm:justify-end">
                 {[{n:15,s:"",l:"лет опыта"},{n:500,s:"+",l:"объектов"},{n:20,s:"+",l:"видов продукции"}].map((s,i)=>(
-                  <div key={i} className="text-right">
-                    <div className="font-serif text-[32px] md:text-[36px] text-darktext leading-none"><Counter to={s.n} suffix={s.s} /></div>
-                    <div className="text-[11px] text-warmgray uppercase tracking-wider mt-2">{s.l}</div>
+                  <div key={i} className="text-center sm:text-right">
+                    <div className="font-serif text-[26px] sm:text-[32px] md:text-[36px] text-darktext leading-none"><Counter to={s.n} suffix={s.s} /></div>
+                    <div className="text-[10px] sm:text-[11px] text-warmgray uppercase tracking-wider mt-2 leading-tight">{s.l}</div>
                   </div>
                 ))}
               </div>
+
             </div>
           </div>
         </div>
