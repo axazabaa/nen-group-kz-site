@@ -3,15 +3,25 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-react";
 import heroImg from "@/assets/nen-construction.png.asset.json";
 import factoryImg from "@/assets/nen-factory.png.asset.json";
-import jbiFs from "@/assets/jbi-fs.jpg";
-import jbiFo from "@/assets/jbi-fo.jpg";
+import jbiFsAsset from "@/assets/fs-fo.jpeg.asset.json";
+import jbiFoAsset from "@/assets/fo-fm.jpeg.asset.json";
 import jbiFm2 from "@/assets/jbi-fm2.jpg";
-import jbiFbs from "@/assets/jbi-fbs.jpg";
-import jbiPk from "@/assets/jbi-pk.jpg";
-import jbiPile from "@/assets/jbi-pile.jpg";
-import jbiLv from "@/assets/jbi-lv.jpg";
-import jbiKs from "@/assets/jbi-ks.jpg";
-import jbiKt from "@/assets/jbi-kt.jpg";
+import jbiFbsAsset from "@/assets/fbs-block.jpeg.asset.json";
+import jbiFbs2466Asset from "@/assets/fbs-2466.jpeg.asset.json";
+import jbiPkAsset from "@/assets/pk-plate.jpeg.asset.json";
+import jbiPileAsset from "@/assets/pile-c.jpeg.asset.json";
+import jbiLvAsset from "@/assets/lv-l205.jpeg.asset.json";
+import jbiKsAsset from "@/assets/ks-zk1100.jpeg.asset.json";
+import jbiKtAsset from "@/assets/kt-kks.jpeg.asset.json";
+const jbiFs = jbiFsAsset.url;
+const jbiFo = jbiFoAsset.url;
+const jbiFbs = jbiFbsAsset.url;
+const jbiFbs2466 = jbiFbs2466Asset.url;
+const jbiPk = jbiPkAsset.url;
+const jbiPile = jbiPileAsset.url;
+const jbiLv = jbiLvAsset.url;
+const jbiKs = jbiKsAsset.url;
+const jbiKt = jbiKtAsset.url;
 import productionImg from "@/assets/nen-production.png.asset.json";
 import pipelineImg from "@/assets/nen-project-pipeline.png.asset.json";
 import yardImg from "@/assets/nen-project-yard.png.asset.json";
@@ -103,6 +113,7 @@ const products = [
   { cat: "Фундаменты", title: "Фундамент под опору с гидроизоляцией ФО/ФМ", concrete: "Бетон М300–М400 (B22,5–B30)", use: "Опоры ЛЭП, освещения, контактных сетей", img: jbiFo },
   { cat: "Фундаменты", title: "Фундамент для дорожных знаков ФМ2", concrete: "Бетон М200 (B15)", use: "Установка дорожных знаков и указателей", img: jbiFm2 },
   { cat: "Фундаменты", title: "Фундаментный блок ФБС", concrete: "Бетон М200–М300 (B15–B22,5)", use: "Ленточные фундаменты, стены подвалов", img: jbiFbs },
+  { cat: "Фундаменты", title: "Фундаментный блок ФБС 24.6.6", concrete: "Бетон М200 (B15)", use: "Ленточные фундаменты, стены подвалов и технических помещений. Размеры: 2380×600×580 мм", img: jbiFbs2466 },
   { cat: "Перекрытия", title: "Плита перекрытия ПК", concrete: "Бетон М300–М400 (B22,5–B30)", use: "Межэтажные перекрытия жилых и промышленных зданий", img: jbiPk },
   { cat: "Сваи", title: "Свая забивная квадратная С 200×200 / 300×300", concrete: "Бетон М300 (B22,5)", use: "Свайные фундаменты на слабых грунтах", img: jbiPile },
   { cat: "Трубы, лотки и колодцы", title: "Лоток Л 20.5", concrete: "Бетон М300 (B22,5)", use: "Лоток предотвращает контакт силового кабеля с землей", img: jbiLv },
