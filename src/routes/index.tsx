@@ -3,7 +3,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, MessageCircle, ArrowUp, Menu, X, Plus, Minus } from "lucide-react";
 import heroImg from "@/assets/nen-construction.png.asset.json";
 import factoryImg from "@/assets/nen-factory.png.asset.json";
-import jbiProductImg from "@/assets/nen-jbi-product.png.asset.json";
+import jbiFs from "@/assets/jbi-fs.jpg";
+import jbiFo from "@/assets/jbi-fo.jpg";
+import jbiFm2 from "@/assets/jbi-fm2.jpg";
+import jbiFbs from "@/assets/jbi-fbs.jpg";
+import jbiPk from "@/assets/jbi-pk.jpg";
+import jbiPile from "@/assets/jbi-pile.jpg";
+import jbiLv from "@/assets/jbi-lv.jpg";
+import jbiKs from "@/assets/jbi-ks.jpg";
+import jbiKt from "@/assets/jbi-kt.jpg";
 import productionImg from "@/assets/nen-production.png.asset.json";
 import pipelineImg from "@/assets/nen-project-pipeline.png.asset.json";
 import yardImg from "@/assets/nen-project-yard.png.asset.json";
@@ -91,30 +99,18 @@ function SectionHead({ num, title, subtitle, center = false, white = false }: { 
 
 /* ============ DATA ============ */
 const products = [
-  { cat: "Фундаменты", title: "Фундаментный блок ФБС-24", spec: "2400×600×600 мм · вес 1,96 т", gost: "ГОСТ 13579-78" },
-  { cat: "Фундаменты", title: "Фундаментный блок ФБС-12", spec: "1200×600×600 мм · вес 0,96 т", gost: "ГОСТ 13579-78" },
-  { cat: "Фундаменты", title: "Фундаментный блок ФБС-9", spec: "900×600×600 мм · вес 0,7 т", gost: "ГОСТ 13579-78" },
-  { cat: "Фундаменты", title: "Подушка фундаментная ФП-1", spec: "1200×1600×300 мм · вес 1,8 т", gost: "ГОСТ 13580-85" },
-  { cat: "Перекрытия", title: "Плита перекрытия ПК 60-15", spec: "6000×1500×220 мм · вес 2,7 т", gost: "ГОСТ 9561-91" },
-  { cat: "Перекрытия", title: "Плита перекрытия ПК 48-15", spec: "4800×1500×220 мм · вес 2,1 т", gost: "ГОСТ 9561-91" },
-  { cat: "Перекрытия", title: "Плита перекрытия ПК 36-15", spec: "3600×1500×220 мм · вес 1,6 т", gost: "ГОСТ 9561-91" },
-  { cat: "Перекрытия", title: "Плита ребристая ПРТ", spec: "Длина до 6 м · несущая", gost: "ГОСТ 28042-89" },
-  { cat: "Трубы и лотки", title: "Кольцо колодезное КС-10", spec: "Диаметр 1000 мм · высота 900 мм", gost: "ГОСТ 8020-90" },
-  { cat: "Трубы и лотки", title: "Кольцо колодезное КС-15", spec: "Диаметр 1500 мм · высота 900 мм", gost: "ГОСТ 8020-90" },
-  { cat: "Трубы и лотки", title: "Лоток водоотводной ЛВ-30", spec: "300×400×1000 мм", gost: "ГОСТ 28737-90" },
-  { cat: "Трубы и лотки", title: "Труба напорная ТС-100", spec: "Диаметр 100 мм · длина 5 м", gost: "ГОСТ 12586-83" },
-  { cat: "Сваи", title: "Свая забивная С-60", spec: "Длина 6 м · сечение 300×300 мм", gost: "ГОСТ 19804-91" },
-  { cat: "Сваи", title: "Свая забивная С-90", spec: "Длина 9 м · сечение 300×300 мм", gost: "ГОСТ 19804-91" },
-  { cat: "Сваи", title: "Свая забивная С-120", spec: "Длина 12 м · сечение 350×350 мм", gost: "ГОСТ 19804-91" },
-  { cat: "Прочее", title: "Дорожная плита ПД-6", spec: "6000×2000×180 мм · вес 5,4 т", gost: "ГОСТ 21924.0-84" },
-  { cat: "Прочее", title: "Бордюрный камень БР 100.30.15", spec: "1000×300×150 мм · вес 0,11 т", gost: "ГОСТ 6665-91" },
-  { cat: "Прочее", title: "Перемычка брусковая 2ПБ 16-2", spec: "Длина 1610 мм · вес 0,08 т", gost: "ГОСТ 948-84" },
+  { cat: "Фундаменты", title: "Фундамент стаканного типа ФС/ФО", concrete: "Бетон М300 (B22,5)", use: "Под колонны промышленных и гражданских зданий", img: jbiFs },
+  { cat: "Фундаменты", title: "Фундамент под опору с гидроизоляцией ФО/ФМ", concrete: "Бетон М300–М400 (B22,5–B30)", use: "Опоры ЛЭП, освещения, контактных сетей", img: jbiFo },
+  { cat: "Фундаменты", title: "Фундамент для дорожных знаков ФМ2", concrete: "Бетон М200 (B15)", use: "Установка дорожных знаков и указателей", img: jbiFm2 },
+  { cat: "Фундаменты", title: "Фундаментный блок ФБС", concrete: "Бетон М200–М300 (B15–B22,5)", use: "Ленточные фундаменты, стены подвалов", img: jbiFbs },
+  { cat: "Перекрытия", title: "Плита перекрытия ПК", concrete: "Бетон М300–М400 (B22,5–B30)", use: "Межэтажные перекрытия жилых и промышленных зданий", img: jbiPk },
+  { cat: "Сваи", title: "Свая забивная квадратная С 200×200 / 300×300", concrete: "Бетон М300 (B22,5)", use: "Свайные фундаменты на слабых грунтах", img: jbiPile },
+  { cat: "Трубы, лотки и колодцы", title: "Лоток водоотводной ЛВ", concrete: "Бетон М300 (B22,5)", use: "Поверхностный водоотвод на дорогах и площадках", img: jbiLv },
+  { cat: "Трубы, лотки и колодцы", title: "Кольцо колодезное КС 10.10 / ЗК 1.100", concrete: "Бетон М200–М300 (B15–B22,5)", use: "Канализационные и водопроводные колодцы", img: jbiKs },
+  { cat: "Трубы, лотки и колодцы", title: "Камера тепловая / кабельная КТ/ККС", concrete: "Бетон М300 (B22,5)", use: "Тепловые сети и кабельные коммуникации", img: jbiKt },
 ];
-const categories = ["Все", "Фундаменты", "Перекрытия", "Трубы и лотки", "Сваи", "Прочее"];
+const categories = ["Все", "Фундаменты", "Перекрытия", "Сваи", "Трубы, лотки и колодцы"];
 
-const productImgs = [
-  jbiProductImg.url,
-];
 
 const faqs = [
   { q: "Какой минимальный объём заказа?", a: "Минимальный заказ не ограничен. Работаем как с единичными изделиями, так и с крупными партиями. При объёмных заказах — оптовые условия." },
@@ -363,19 +359,19 @@ function Page() {
             ))}
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((p, i) => (
-              <div key={p.title} className="float-in bg-white border border-linecolor rounded-md overflow-hidden hover:border-sage transition-all hover:shadow-[0_4px_18px_rgba(0,0,0,0.05)]">
-                <div className="h-[180px] bg-[#F0F0EC] overflow-hidden">
-                  <img src={productImgs[i % productImgs.length]} alt={p.title} className="w-full h-full object-cover" loading="lazy" />
+            {filtered.map((p) => (
+              <div key={p.title} className="float-in bg-white border border-linecolor rounded-md overflow-hidden hover:border-sage transition-all hover:shadow-[0_4px_18px_rgba(0,0,0,0.05)] flex flex-col">
+                <div className="h-[200px] bg-[#F0F0EC] overflow-hidden">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" loading="lazy" width={800} height={600} />
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                   <div className="section-label mb-2">{p.cat}</div>
-                  <div className="font-heading font-semibold text-[15px] text-darktext mb-2">{p.title}</div>
-                  <div className="text-[13px] text-warmgray mb-3">{p.spec}</div>
-                  <div className="flex items-center justify-between">
-                    <span className="inline-block text-[12px] border border-linecolor text-warmgray px-2 py-1 rounded">{p.gost}</span>
-                    <a href="#contact-form" className="font-heading font-medium text-[13px] text-sage hover:text-sage-dark">Запросить цену</a>
+                  <div className="font-heading font-semibold text-[15px] text-darktext mb-3 min-h-[44px]">{p.title}</div>
+                  <div className="space-y-2 mb-4 flex-1">
+                    <div className="text-[13px] text-warmgray"><span className="text-darktext font-medium">Бетон: </span>{p.concrete.replace(/^Бетон\s*/, "")}</div>
+                    <div className="text-[13px] text-warmgray"><span className="text-darktext font-medium">Применение: </span>{p.use}</div>
                   </div>
+                  <a href="#contact-form" className="font-heading font-medium text-[13px] text-sage hover:text-sage-dark self-start">Запросить цену →</a>
                 </div>
               </div>
             ))}
