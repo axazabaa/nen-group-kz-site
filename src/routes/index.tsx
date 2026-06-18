@@ -906,7 +906,7 @@ function Footer() {
               <span className="font-heading font-medium text-[13px] text-sage tracking-[0.2em]">GROUP KZ</span>
             </div>
             <div className="text-[12px] text-warmgray">Производство железобетонных изделий</div>
-            <p className="text-[13px] text-warmgray mt-4">Шымкент, Казахстан. Работаем с 2010 года.</p>
+            <p className="text-[13px] text-warmgray mt-4">Шымкент, Казахстан. Работаем с 2016 года.</p>
           </div>
           <div>
             <div className="font-heading font-semibold text-[13px] text-white mb-4">Продукция</div>
